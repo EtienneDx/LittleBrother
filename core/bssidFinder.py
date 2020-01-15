@@ -10,6 +10,11 @@ wait = "["+Fore.MAGENTA+"*"+Fore.RESET+"]"
 def bssidFinder():
 	bssid = input(" MAC/Bssid:  ")
 	print("\n"+wait+" Locating '%s'..." % (bssid))
+
+	bssid_finder(bssid)
+
+
+def bssid_finder(bssid):
 	url = "https://api.mylnikov.org/wifi?v=1.1&bssid=%s"
 	response = requests.get(url % (bssid))
 	data = response.content.decode('utf-8')

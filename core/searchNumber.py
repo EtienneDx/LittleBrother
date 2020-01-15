@@ -9,6 +9,11 @@ from terminaltables import SingleTable
 def searchNumber(codemonpays):
 	num = input(" Téléphone: ")
 
+	search_number(codemonpays, num)
+
+
+def search_number(codemonpays, num):
+
 	headers = {
 		'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
 	    'referrer': 'https://google.com',

@@ -1,4 +1,5 @@
 import sys
+import threading
 import tkinter as tk
 import tkinter.messagebox as messagebox
 
@@ -9,8 +10,6 @@ def search_username(window, settings):
     search = tk.Toplevel(window)
     search.title("Search Username")
     search.geometry("300x150")
-
-    city = tk.StringVar()
 
     frame1 = tk.Frame(search, background="White")
     frame1.pack()
@@ -27,7 +26,10 @@ def search_username(window, settings):
 
 def done(search, name):
     search.destroy()
-    messagebox.showinfo("Searching", "Currently searching...")
+    try:
+        threading.Thread(target=messagebox.showinfo, args=("Searching", "Currently searching...")).start()
+    except:
+        messagebox.showinfo("Searching", "Currently searching...")
     old = sys.stdout
     with open("./output.txt", "w", encoding="utf-8") as f:
         sys.stdout = f

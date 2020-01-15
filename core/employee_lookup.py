@@ -17,6 +17,11 @@ def employee_lookup():
 
 	print("\n"+wait+" Recherche des employés de '%s'...\n" % (entreprise))
 
+	emp_lookup(entreprise, city)
+
+
+def emp_lookup(entreprise, city):
+
 	linkedin = searchLinkedIn()
 	linkedin.search(entreprise, city)
 	

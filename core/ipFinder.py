@@ -12,6 +12,11 @@ def ipFinder():
 	ip = input(" Adresse IP: ")
 	print("\n"+wait+" Locating '%s'..." % (ip))
 
+	ip_finder(ip)
+
+
+def ip_finder(ip):
+
 	TABLE_DATA = []
 
 	url = "http://ip-api.com/json/"

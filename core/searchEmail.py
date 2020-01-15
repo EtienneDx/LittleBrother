@@ -13,6 +13,11 @@ init()
 def SearchEmail():
 	email = input(" Email: ")
 	print("\n"+wait+" Recherche d'information sur '%s'..." % (email))
+
+	search_email(email)
+
+
+def search_email(email):
 	lkd = leaked()
 	leak = lkd.email(email)
 

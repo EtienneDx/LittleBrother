@@ -1,4 +1,6 @@
 import os, requests, re, json
+import socket
+
 from colorama import init, Fore,  Back,  Style
 
 warning = "["+Fore.RED+"!"+Fore.RESET+"]"
