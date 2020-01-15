@@ -11,6 +11,11 @@ def searchUserName():
 	username = input(" Pseudo: ")
 	print("\n"+wait+" Recherche '%s'..." % (username))
 
+	search_username(username)
+
+
+def search_username(username):
+
 	# url = "https://www.google.com/search?num=100&q=\\\"%s\"\\"
 	url = "https://www.google.com/search?num=100&q=\\%s\\"
 	url2 = "https://www.google.com/search?num=100&q=\\intitle:\"%s\"\\"
