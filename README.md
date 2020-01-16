@@ -50,6 +50,10 @@ Lancer LittleBrother depuis Windows:
 python3 LittleBrother.py
 ```
 
+Utiliser l'interface utilisateur
+=
+L'interface utilisateur (GUI) nécéssite [l'installation de tkinter](https://tkdocs.com/tutorial/install.html), une bibliothèque de rendu graphique sous python. Pour lancer l'application, il suffit alors de lancer le script _LittleBrother.pyw_, qui s'execute par défaut avec pythonw.exe, c'est à dire la version de python sans console de python.
+
 Discord
 =
 Si vous avez des questions, des idées, des problèmes concernant LittleBrother ou si vous voulez juste suivre l'avancement de ce projet.  
