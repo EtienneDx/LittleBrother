@@ -12,6 +12,11 @@ def google():
 	print("\n"+information+" Renseignez Prénom, Nom, Ville, Département, Sport, Etablissement scolaire ...\n")
 	nom = input(" Recherche: ")
 	print("\n"+wait+" Recherche en cours...")
+
+	search_google(nom)
+
+
+def search_google(nom):
 	url = "https://www.google.com/search?num=20&q=\\%s\\"
 	try:
 		nom2 = nom.split(" ")

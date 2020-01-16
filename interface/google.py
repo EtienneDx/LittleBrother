@@ -3,46 +3,40 @@ import threading
 import tkinter as tk
 import tkinter.messagebox as messagebox
 
-from core.employee_lookup import emp_lookup as sp
+from core.google import search_google as sp
 
 
-def employee_lookup(window, settings):
+def search_google(window, settings):
     search = tk.Toplevel(window)
-    search.title("Employee lookup")
-    search.geometry("300x150")
+    search.title("Google Search")
+    search.geometry("500x150")
 
     frame1 = tk.Frame(search, background="White")
     frame1.pack()
-    frame2 = tk.Frame(search, background="White")
-    frame2.pack()
 
-    tk.Label(frame1, text="Enterprise: ").pack(side=tk.LEFT)
-    name = tk.Entry(frame1)
+    tk.Label(frame1, text="Keyword: ").pack(side=tk.LEFT)
+    name = tk.Entry(frame1, width=60)
     name.pack(side=tk.RIGHT)
 
-    tk.Label(frame2, text="City: ").pack(side=tk.LEFT)
-    city = tk.Entry(frame2)
-    city.pack(side=tk.RIGHT)
-
-    button = tk.Button(search, text="Search", command=lambda: done(search, name.get(), city.get()))
+    button = tk.Button(search, text="Search", command=lambda: done(search, name.get()))
     button.pack()
 
     search.mainloop()
 
 
-def done(search, name, city):
+def done(search, name):
     search.destroy()
     old = sys.stdout
     with open("./output.txt", "w", encoding="utf-8") as f:
         sys.stdout = f
         try:
-            x = threading.Thread(target=sp, args=(name, city))
+            x = threading.Thread(target=sp, args=(name))
             x.start()
             messagebox.showinfo("Searching", "Currently searching...")
             x.join()
         except:
             messagebox.showinfo("Searching", "Currently searching...")
-            sp(name, city)
+            sp(name)
     sys.stdout = old
 
     messagebox.showinfo("Result", "The result has been written in the output.txt file")

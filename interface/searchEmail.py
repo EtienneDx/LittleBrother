@@ -26,14 +26,17 @@ def search_email(window, settings):
 
 def done(search, name):
     search.destroy()
-    try:
-        threading.Thread(target=messagebox.showinfo, args=("Searching", "Currently searching...")).start()
-    except:
-        messagebox.showinfo("Searching", "Currently searching...")
     old = sys.stdout
     with open("./output.txt", "w", encoding="utf-8") as f:
         sys.stdout = f
-        sp(name)
+        try:
+            x = threading.Thread(target=sp, args=(name))
+            x.start()
+            messagebox.showinfo("Searching", "Currently searching...")
+            x.join()
+        except:
+            messagebox.showinfo("Searching", "Currently searching...")
+            sp(name)
     sys.stdout = old
 
     messagebox.showinfo("Result", "The result has been written in the output.txt file")

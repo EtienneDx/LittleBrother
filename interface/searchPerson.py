@@ -32,14 +32,17 @@ def search_person(window, settings):
 
 def done(search, code, name, city):
     search.destroy()
-    try:
-        threading.Thread(target=messagebox.showinfo, args=("Searching", "Currently searching...")).start()
-    except:
-        messagebox.showinfo("Searching", "Currently searching...")
     old = sys.stdout
     with open("./output.txt", "w", encoding="utf-8") as f:
         sys.stdout = f
-        sp(code, name, city)
+        try:
+            x = threading.Thread(target=sp, args=(code, name, city))
+            x.start()
+            messagebox.showinfo("Searching", "Currently searching...")
+            x.join()
+        except:
+            messagebox.showinfo("Searching", "Currently searching...")
+            sp(code, name, city)
     sys.stdout = old
 
     messagebox.showinfo("Result", "The result has been written in the output.txt file")

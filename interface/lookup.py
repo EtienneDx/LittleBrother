@@ -1,6 +1,7 @@
 import tkinter as tk
 
 from interface.employeeLookup import employee_lookup
+from interface.google import search_google
 from interface.searchPerson import search_person
 from interface.searchUsername import search_username
 from interface.searchAdress import search_adress
@@ -19,6 +20,7 @@ modes = {
     "BSSID Finder": bssid_finder,
     "Search Email": search_email,
     "Employee Lookup": employee_lookup,
+    "Google search": search_google
 }
 
 
