@@ -39,9 +39,6 @@ if sys.platform.startswith("darwin"):
     ot.SingleTable = AsciiTable
     uncache(['terminaltables.other_tables'])
 
-from terminaltables import SingleTable
-print(SingleTable(['something']).table)
-
 
 import tkinter as tk
 
