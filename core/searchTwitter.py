@@ -2,6 +2,11 @@ from core.twitterSearchTool import twitterSearchTool
 
 def searchTwitter():
 	username = input(" Username: ")
+
+	search_twitter(username)
+
+
+def search_twitter(username):
 	twitool = twitterSearchTool()
 	twitool.getInfoProfile(username)
 

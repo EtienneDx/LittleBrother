@@ -4,6 +4,7 @@ from interface.employeeLookup import employee_lookup
 from interface.facebookStalk import facebook_stalk
 from interface.google import search_google
 from interface.searchPerson import search_person
+from interface.searchTwitter import search_twitter
 from interface.searchUsername import search_username
 from interface.searchAdress import search_adress
 from interface.searchNumber import search_number
@@ -22,7 +23,8 @@ modes = {
     "Search Email": search_email,
     "Employee Lookup": employee_lookup,
     "Google search": search_google,
-    "Facebook stalk": facebook_stalk
+    "Facebook stalk": facebook_stalk,
+    "Search twitter": search_twitter,
 }
 
 

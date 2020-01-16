@@ -10,6 +10,11 @@ wait = "["+Fore.MAGENTA+"*"+Fore.RESET+"]"
 
 def searchInstagram():
 	user = input(" Username: ")
+
+	search_instagram(user)
+
+
+def search_instagram(user):
 	urlProfil = "https://instagram.com/"+user
 
 	insta = instagramSearchTool()

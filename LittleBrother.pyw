@@ -37,16 +37,16 @@ settings.init()
 window = tk.Tk()
 window.title("Little Brother")
 window.configure(background="white")
-window.geometry("300x150")
+window.geometry("300x100")
 
 lookup = tk.Button(window, text="Lookup", command=lambda: open_lookup(window, settings))
 lookup.pack()
 
-otherTools = tk.Button(window, text="Other Tools", command=lambda: open_other_tools(window))
+otherTools = tk.Button(window, text="Other Tools", command=lambda: open_other_tools(window, settings))
 otherTools.pack()
 
-profiler = tk.Button(window, text="Profiler", command=lambda: open_profiler(window))
-profiler.pack()
+# profiler = tk.Button(window, text="Profiler", command=lambda: open_profiler(window))
+# profiler.pack()
 
 frame = tk.Frame(window, background="White")
 frame.pack()
